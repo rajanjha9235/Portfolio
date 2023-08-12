@@ -43,7 +43,7 @@ body {
 }
 
 .nav ul {
-    margin-left: 88px;
+    margin: 0px auto;
     list-style: none;
     display: flex;
 }
@@ -160,7 +160,7 @@ body {
     box-shadow: 0 0 11px 1px black;
     margin: 11px;
     padding: 7px 5px;
-    height: 200px;
+    height: 230px;
     max-width: 416px;
     display: flex;
     background-color: #622dfb;
@@ -196,6 +196,7 @@ body {
 #resume {
     display: flex;
     text-align: center;
+    margin-top : 55px;
 }
 
 #resume h1 {
