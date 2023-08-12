@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 33px;
+}
+h3{
+    font-size: 25px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #6800ff;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+body {
+    background-color: #6e52f7;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+}
+
+#logo img {
+    height: 61px;
+    width: 61px;
+    border-radius: 111px;
+    margin-left: 13px;
+}
+
+.nav ul {
+    margin-left: 88px;
+    list-style: none;
+    display: flex;
+}
+
+.nav a {
+    text-decoration: none;
+    margin: 0 51px;
+    padding: 6px 11px;
+    color: white;
+    border-radius: 21px;
+}
+
+.nav a:hover {
+    background-color: #40f;
+}
+
+
+#home {
+    height: 400px;
+    display: flex;
+}
+
+#home div {
+    position: relative;
+    top: 144px;
+    padding: 2px 21px;
+    text-align: center;
+}
+
+#home h1 {
+    margin-bottom: 21px;
+}
+
+
+/* <======================== About Section =============================>  */
+
+#about {
+    height: 345px;
+}
+
+#about h1 {
+    text-align: center;
+}
+
+.about {
+    display: flex;
+}
+
+.about .profile {
+    margin: 21px;
+    text-align: center;
+}
+
+.about img {
+    height: 233px;
+    width: 233px;
+    border-radius: 209px;
+    box-shadow: 0 0 11px 3px #6800ff;
+}
+
+#about ul {
+    margin: 44px;
+}
+
+#about li {
+    margin-bottom: 21px;
+}
+
+
+
+
+/* <=====================  Skills Section  ===================>  */
+
+#skills h1 {
+    text-align: center;
+}
+
+.skills {
+    margin: 21px;
+    display: flex;
+}
+
+.skills img {
+    height: 400px;
+    width: 400px;
+    border-radius: 66px;
+    box-shadow: 0 0 13px 1px #6800ff;
+}
+
+.skills li {
+    margin: 27px;
+}
+
+
+/* <============== Project Section ================>  */
+#projects {
+    text-align: center;
+    height: 330px;
+}
+
+#projects h1 {
+    margin-bottom: 21px;
+}
+#projects p{
+    padding: 3px 11px;
+}
+
+#card {
+    display: flex;
+    margin: 11px;
+}
+
+.card {
+    box-shadow: 0 0 11px 1px black;
+    margin: 11px;
+    padding: 7px 5px;
+    height: 200px;
+    max-width: 416px;
+    display: flex;
+    background-color: #622dfb;
+}
+.card h3{
+    margin-bottom: 9px;
+}
+.card .btn{
+    margin-top: 9px;
+}
+
+.card img {
+    height: 140px;
+    width: 140px;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 9px 13px;
+    border-radius: 21px;
+    border-style: none;
+    background-color: #6800ff;
+    color: white;
+
+    font-size: 1rem;
+}
+
+.btn:hover{
+    background-color: #4701b1;
+}
+
+/* < ============================= Resume Section  =================================>   */
+#resume {
+    display: flex;
+    text-align: center;
+}
+
+#resume h1 {
+    margin: 21px;
+}
+
+#resume button {
+    margin-top: 44px;
+}
+
+#resume img {
+    height: 375px;
+}
+
+#resume-text {
+    margin: 0px 11px;
+    padding: 3px 11px;
+    margin-top: 33px;
+}
+
+
+/* <======================= Contact Section =========================================>  */
+#contact {
+    height: 250px;
+    padding: 2px 13px;
+    text-align: center;
+}
+
+#contact h1 {
+    margin-bottom: 21px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fa-shake {
+    font-size: 3rem;
+    margin: 44px 55px;
+}
+
+
+Footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+    height : 21px;
+}
