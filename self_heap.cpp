@@ -43,6 +43,10 @@ public:
 
     // Delete the root node from heap and arrange the heap
     int delete_from_heap();
+    
+    // Increade the value of key at given index to some new value
+    void increase_key( int i, int new_val);
+
 
     void print_heap()
     {
@@ -54,7 +58,7 @@ public:
     }
 };
 
-// Construcutor
+// Construcutor to initialise the heap
 Max_heap::Max_heap(int total_size)
 {
     heap_size = 0;
@@ -62,6 +66,7 @@ Max_heap::Max_heap(int total_size)
     arr = new int[total_size];
 }
 
+// Insert the node at end of heap(array) and take it to its correct position by swapping with parent node
 void Max_heap::insert(int val)
 {
 
@@ -71,9 +76,10 @@ void Max_heap::insert(int val)
         cout << "\nOverflow : Could not insert\n";
         return;
     }
-
+	
+	// Increase the size of array & insert element to last index of array
     heap_size++;
-    int i = heap_size - 1;
+    int i = heap_size - 1;  // Because of 0 based indexing
     arr[i] = val;
 
     // Check newly inserted node with its parent and swap it if greater than parent
@@ -84,21 +90,22 @@ void Max_heap::insert(int val)
     }
 }
 
+// Heaify the sub-tree taking the given index as a root it goes upside down
 void Max_heap::heapify_max(int i)
 {
     int l = left_index(i);
     int r = right_index(i);
-    int largest = i;
+    int largest = i;        // Assuming that given index as largest
 
     // Check with the left child
     if (l < heap_size && arr[l] > arr[i])
         largest = l;
 
-    // If above condition true then largest = i else largest = i and checking for the right child
+    // If above condition true then largest = l else largest = i and checking for the right child
     if (r < heap_size && arr[r] > arr[largest])
         largest = r;
 
-    // If largest is changed then swap that
+    // If largest is changed then swap that & call heapify function again for the largest
     if (largest != i)
     {
         swap(arr[i], arr[largest]);
@@ -106,6 +113,7 @@ void Max_heap::heapify_max(int i)
     }
 }
 
+// Delete the root node and then fix that using heapify
 int Max_heap::delete_from_heap()
 {
     // If only one element is there in heap
@@ -124,6 +132,20 @@ int Max_heap::delete_from_heap()
     heapify_max(0);
 
     return root;
+}
+
+
+// Increase the value of key at given index to some new value
+void Max_heap::increase_key( int i, int new_val){
+
+	// step-1. Store the new value at given index
+	arr[i] = new_val;
+	
+	// step-2. Check with the parent and swap if greater than parent
+	while( i!= 0 && arr[i] > arr[parent_index(i)]){
+		swap(arr[i], arr[parent_index(i)]);
+		i = parent_index(i);
+	}
 }
 
 
@@ -155,7 +177,7 @@ void heap_sort_heapify(int arr[], int n, int i){
 }
 
 
-
+// To sort the array in ascending order
 void heap_Sort(int arr[], int n){
 
 // First make that array a heap using heapify function 
@@ -192,9 +214,15 @@ int main()
     cout << "Current Size = " << h.current_size() << endl;
 
     cout << "\nDeleted element = " << h.delete_from_heap() << endl;
+    h.print_heap();
+    
     cout << "\nDeleted element = " << h.delete_from_heap() << endl;
     h.print_heap();
-    cout << "Current Size = " << h.current_size() << endl;
+    cout << "\nCurrent Size = " << h.current_size() << endl;
+    
+    cout<<"\nAfter increasing the key "<<endl;
+    h.increase_key(2,90);
+    h.print_heap();
 
 
     int array[] = {50,30,40,60,20};
